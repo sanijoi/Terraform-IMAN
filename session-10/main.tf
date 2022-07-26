@@ -5,8 +5,9 @@ module "s3" {
 }
 
 module "ec2" {
-    source        = "github.com/sanijoi/Terraform-IMAN/iman/ec2"
-    ami           = "ami-02d1e544b84bf7502"
-    instance_type = "t2.micro"
-    env           = "dev"
+    source         = "github.com/sanijoi/Terraform-IMAN/session-10/ec2.tf"
+    ami            = "ami-02d1e544b84bf7502"
+    instance_type  = "t2.micro"
+    env            = "dev"
+    s3_bucket_name = module.s3.id
 }
