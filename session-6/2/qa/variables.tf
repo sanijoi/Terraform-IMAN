@@ -8,17 +8,18 @@ variable "key_name" {
     description = "this is a  Public key "
     default = "iman"
 }
-variable "tags" {
-    type = string
-    description = "this is a for tags "
-    default = "QA"
-}
 variable "ingress_port" {
     type = list(string)
     description = "this is for ingress ports"
     default = ["22", "80", "443"]
 }
-variable "s3_bucket_name" {
+variable "security_group"{
     type = string
-    description = "this is a bucket name"
+    description = "this is Securiry Group  name"
+    default = "sg-iman"
+}
+variable "eva" {
+    type = string
+    description = "this is for instance name"
+    default = "dev"
 }

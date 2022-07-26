@@ -18,7 +18,3 @@ variable "ingress_port" {
     description = "this is for ingress ports"
     default = ["22", "80", "443"]
 }
-variable "s3_bucket_name" {
-    type = string
-    description = "this is a bucket name"
-}
