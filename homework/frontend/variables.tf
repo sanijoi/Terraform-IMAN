@@ -1,75 +1,56 @@
-variable "instace_type" {
-    type = string
-    description = "this is for instace_type"
-    default = "t2.micro"
-}
-variable "key_name" {
-    type = string
-    description = "My Public"
-    default = "iman"
-}
-variable "tags" {
-    type = string
-    description = "tag for instance Name"
-    default = "qwerty"
-}
-
-# variable fort subnets
-variable "public_subnet1" {
-    type = string
-    description = "this for public subnet"
-    default = "10.0.1.0/24"
-}
-
-variable "public_subnet2" {
-    type = string
-    description = "this for public subnet"
-    default = "10.0.2.0/24"
-}
-
-variable "public_subnet3" {
-    type = string
-    description = "this for public subnet"
-    default = "10.0.3.0/24"
-}
-
-variable "privet_subnet1" {
-    type = string
-    description = "this for public subnet"
-    default = "10.0.1.0/24"
-}
-variable "privat_subnet2" {
-    type = string
-    description = "this for public subnet"
-    default = "10.0.12.0/24"
-}
-variable "privat_subnet3" {
-    type = string
-    description = "this for public subnet"
-    default = "10.0.13.0/24"
-}
-variable "cidr_ip" {
-    type = string
-    description = "this for cidr ip addres"
-    default = "0.0.0.0/0"
-}
 variable "env" {
-    type = string
-    description = "this is for evitoment"
-    default = "dev"
+  type        = string
+  description = "this represents environment"
+  default     = "dev"
 }
 variable "ingress_ports" {
-    type = list(string)
-    description = "this is list of ports for  ingress rule"
-    default = ["80", "443"]
+  type        = list(string)
+  description = "This is a list of ports for ingress rule"
+  default     = ["22", "80", "443"]
 }
-variable "availability_zones" {
-    type = list(string)
-    description = "This is for availability zone"
-    default  =["us-east2a", "us-east-2b"]
+variable "lb_ingress_ports" {
+  type        = list(string)
+  description = "This is a list of ports for ingress rule"
+  default     = ["80", "443"]
+}
+
+variable "key_name" {
+  type        = string
+  description = "This is my Public Key"
+  default     = "iman"
+}
+variable "instance_type" {
+  type        = string
+  description = "This is a size of EC2"
+  default     = "t2.micro"
+}
+variable "public_subnet1" {
+  type        = string
+  description = "This is public subnet 1"
+  default     = "subnet-01233971e2fb395bf"
+}
+variable "public_subnet2" {
+  type        = string
+  description = "This is public subnet 2"
+  default     = "subnet-0f9cb7e4e7339d977"
+}
+variable "vpc_id" {
+  type        = string
+  description = "This is vpc id"
+  default     = "vpc-01bbd4441a924c70c"
+}
+variable "availability_zone" {
+  type        = string
+  description = "This is availability zone"
+  default     = "us-east-2b"
 }
 variable "ec2_sizes" {
-    type = list(string)
-    description = "these are max, min sizes for ec2"
-    default = ["3", "5", "3"]
+  type        = list(string)
+  description = "These are max, min sizes and desired capacity for ec2"
+  default     = ["3", "2", "3"]
+}
+variable "cidr_blocks" {
+  type        = string
+  description = "This is cidr block for sg"
+  default     = "0.0.0.0/0"
 }
